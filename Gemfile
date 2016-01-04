@@ -20,6 +20,7 @@ gem 'foundation-rails'
 gem 'react-rails'
 gem 'flux-rails-assets'
 gem 'lodash-rails'
+gem 'sprockets-es6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

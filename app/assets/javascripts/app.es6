@@ -1,33 +1,35 @@
-var Constants = {
+const Constants = {
   CHANGE_EVENT: 'change',
   ADD_COMMENT: 'comments.add'
 }
 
-var Store = new _.extend({}, EventEmitter.prototype, {
+class Store extends EventEmitter {
 
-  _comments: [],
-
-  addComment: function(comment) {
+  constructor() {
+    super()
+  this._comments = []
+}
+  addComment (comment) {
     this._comments[comment.id] = comment;
-  },
+  }
 
-  comments: function() {
+  comments () {
     return this._comments;
-  },
+  }
 
-  addChangeListener: function(callback) {
+  addChangeListener (callback) {
     this.on(Constants.CHANGE_EVENT, callback);
-  },
+  }
 
-  removeChangeListener: function(callback) {
+  removeChangeListener (callback) {
     this.removeListener(Constants.CHANGE_EVENT, callback);
-  },
+  }
 
-  emitChange: function() {
+  emitChange () {
     this.emit(Constants.CHANGE_EVENT);
   }
 
-});
+}
 
 var AppDispatcher = new Flux.Dispatcher();
 
