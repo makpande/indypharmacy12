@@ -31,27 +31,28 @@ class Store extends EventEmitter {
 
 }
 
+let commentStore = new Store()
+
 var AppDispatcher = new Flux.Dispatcher();
 
-  AppDispatcher.register(function(payload) {
-    var action = payload.actionType;
-    switch(action) {
+  AppDispatcher.register((payload) => {
+      switch(payload.actionType) {
       case Constants.ADD_COMMENT:
-        Store.addComment(payload.comment);
-        Store.emitChange();
-        break;
+        commentStore.addComment(payload.comment)
+        commentStore.emitChange();
+        break
         default:
 
     }
   });
 
-  var Actions = new _.extend({}, {
-    addComment: function(params) {
+  class Actions  {
+    addComment (params) {
       AppDispatcher.dispatch({
         actionType: Constants.ADD_COMMENT,
         comment: params
       });
     }
+  }
 
-
-  });
+  let commentActions = new Actions()
