@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   root 'welcome#index'
 
   get 'welcome/Pharmacy'
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
 get 'posts/index'
 
   get 'posts/show'
-
+  resources :topics
   resources :posts
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.

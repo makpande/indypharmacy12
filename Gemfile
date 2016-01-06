@@ -22,6 +22,9 @@ gem 'flux-rails-assets'
 gem 'lodash-rails'
 gem 'sprockets', '>= 3.0.0'
 gem 'sprockets-es6'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'will_paginate'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
