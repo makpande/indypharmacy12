@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-root 'posts#index'
+  root 'welcome#index'
+
+  get 'welcome/Pharmacy'
+
+  get 'welcome/Topics'
+
+  get 'welcome/About'
+
+  get 'welcome/Contact'
+
+get 'posts/index'
 
   get 'posts/show'
 
