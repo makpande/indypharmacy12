@@ -10,7 +10,7 @@ class CommentSection extends React.Component {
     super();
     this.store = new CommentStore();
     this.actions = Actions;
-    console.log(props);
+    this.actions.setComments(JSON.parse(props.comments));
   }
 
   static get childContextTypes() {
