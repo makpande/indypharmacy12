@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Indy Pharmacy Blog" %></title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -13,10 +13,20 @@
   </head>
     <header>
       <div class="row">
-      <div class="small-4 columns">
-      Pharmacy Hours Mon - Sat 9 - 7
-      Sundays and Holidays 10 - 5
-    </div>
+        <div class="small-4 columns right">
+          <ul class="inline-list">
+            <li><i class="fi-social-facebook"></i></li>
+            <li><i class="fi-mail"></i></li>
+            <li><i class="fi-social-twitter"></i></li>
+          </ul>
+          <p><b>Pharmacy Hours Mon - Sat 9 AM - 7 PM
+             Sundays and Holidays 10 AM - 5 PM</b></p>
+        </div>
+        <div class="small-4 columns left">
+          <%= image_tag("pestle1.jpg", size: "1px") %>
+        </div>
+
+<i class="ft-star"></i>
     </div>
     </header>
 
@@ -37,7 +47,7 @@
     <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
             <li><label>Indy Pharmacy</label></li>
-            <li><a href="/">Home</a></li>
+            <li><a href="/"  >Home  <i class="fi-home"></i></a></li>
             <li><%= link_to "Pharmacy", welcome_Pharmacy_path %></li>
             <li><%= link_to "Topics", topics_path %></li>
             <li><a href="#">About</a></li>

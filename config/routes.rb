@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resources :topics
+  resources :posts
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   get 'welcome/Pharmacy'
 
   get 'welcome/Topics'
@@ -11,12 +15,10 @@ Rails.application.routes.draw do
 
   get 'welcome/Contact'
 
-get 'posts/index'
+  get 'posts/index'
 
   get 'posts/show'
-  resources :topics
-  resources :posts
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

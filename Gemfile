@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'ancestry'
 gem 'rails_admin'
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails', '~> 3.0.0'
 gem 'react-rails'
 gem 'flux-rails-assets'
 gem 'lodash-rails'
