@@ -9,7 +9,7 @@
   <div class="columns medium-6">
     <h3>Comments</h3>
     <% @comments.each do |comment| %>
-      <%= react_component('CommentSection') %>
+      <%= react_component('CommentSection', comments: raw(render(template: 'comments/index.json.jbuilder')) ) %>
     <% end %>
 </div>
 </div>

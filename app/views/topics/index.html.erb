@@ -5,8 +5,9 @@
   </div><br />
     <div class="row">
        <%= @topics.each do |topic| %>
-         <h3><%= link_to topic, "posts" %></h3>
+         <h3><%= link_to topic.title, "posts" %></h3>
          <p><%= topic.body %><p>
+           <%= topic.topicimage %>
        <% end %>
      </div>
    </div>
