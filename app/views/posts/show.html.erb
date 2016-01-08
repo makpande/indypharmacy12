@@ -1,4 +1,4 @@
-<div class="row">
+<div class="container">
   <h2><%= @post.title %></h2>
 </div>
 
@@ -9,7 +9,7 @@
   <div class="columns medium-6">
     <h3>Comments</h3>
 
-      <%= react_component('CommentSection', comments: raw(render(template: 'comments/index.json.jbuilder')) ) %>
-  
+      <%= react_component('CommentSection', postId: @post.id, comments: raw(render(template: 'comments/index.json.jbuilder')) ) %>
+
 </div>
 </div>

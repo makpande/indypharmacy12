@@ -14,18 +14,22 @@ class Api {
   }
 
   static put(route, params) {
-    return fetch(route + '.json', {
-      method: 'put',
-      credentials: 'include',
-      headers: this.headers()
-    });
+    return this.xhr(route, params, 'put');
   }
+
   static post(route, params) {
+    return this.xhr(route, params, 'post');
+
+  }
+
+  static xhr(route, params, verb) {
     return fetch(route + '.json', _.merge({
-      method: 'post',
+      method: verb,
       credentials: 'include',
       headers: this.headers()
-    }, { body: JSON.stringify(params) }))
+    }, { body: JSON.stringify(params) })).then( resp => {
+      return resp.json();
+    });
   }
 }
 export default Api;

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       put 'upvote', to: 'comment#upvote'
     end
   end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   get 'welcome/Pharmacy'
