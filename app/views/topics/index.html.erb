@@ -5,9 +5,9 @@
   </div><br />
     <div class="row">
        <%= @topics.each do |topic| %>
-         <h3><%= link_to topic.title, "posts" %></h3>
-         <p><%= topic.body %><p>
-           <%= topic.topicimage %>
+         <h3><%= link_to topic.title, "posts" %></h3><br />
+           <%= image_tag(topic.topicimage) %><br />
+           <p><%= topic.body %><p>
        <% end %>
      </div>
    </div>
