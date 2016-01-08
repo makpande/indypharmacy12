@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :topics
-  resources :posts
+  resources :posts do
+    resources :comments do
+      put 'upvote', to: 'comment#upvote'
+    end
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   get 'welcome/Pharmacy'
